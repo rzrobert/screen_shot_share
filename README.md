@@ -41,7 +41,46 @@ TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
 ```dart
-const like = 'sample';
+ final ShotController shotController = ShotController();
+
+ ScreenShotShare(
+        shotController: shotController,
+        actionHeight: 100,
+        actions: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _item('QQ', 'assets/images/ic/ic_news_family_apply.png'),
+            _item('微信', 'assets/images/ic/ic_news_feedback.png'),
+            _item('小红书', 'assets/images/ic/default_song_cover.png'),
+          ],
+        ),
+        child: SizeBox(),
+        )
+        
+          Widget _item(String title, String iconPath) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            iconPath,
+            height: 50,
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 10,
+              color: Colors.white,
+            ),
+          )
+        ],
+      ),
+    );
+  }
 ```
 
 ## Additional information
