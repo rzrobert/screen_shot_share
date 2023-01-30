@@ -1,15 +1,15 @@
-library screen_shot_share;
+library widget_shot_share;
 
 import 'dart:io';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:screen_shot_share/constants.dart';
-import 'package:screen_shot_share/shot_controller_base.dart';
+import 'package:widget_shot_share/constants.dart';
+import 'package:widget_shot_share/shot_controller_base.dart';
 
 import 'mixins/shot_mixin.dart';
 
-class ScreenShotShare extends StatefulWidget {
-  const ScreenShotShare({
+class WidgetShotShare extends StatefulWidget {
+  const WidgetShotShare({
     Key? key,
     required this.child,
     required this.shotController,
@@ -24,10 +24,10 @@ class ScreenShotShare extends StatefulWidget {
 
   @override
   // ignore: library_private_types_in_public_api
-  _ScreenShotShareState createState() => _ScreenShotShareState();
+  _WidgetShotShareState createState() => _WidgetShotShareState();
 }
 
-class _ScreenShotShareState extends State<ScreenShotShare>
+class _WidgetShotShareState extends State<WidgetShotShare>
     with ShotMixin, SingleTickerProviderStateMixin {
   late AnimationController _widthFactorAnimationController;
 
@@ -54,9 +54,9 @@ class _ScreenShotShareState extends State<ScreenShotShare>
 }
 
 class ShotController extends ShotControllerBase {
-  _ScreenShotShareState? _state;
+  _WidgetShotShareState? _state;
 
-  _bind(_ScreenShotShareState state) {
+  _bind(_WidgetShotShareState state) {
     _state = state;
   }
 
